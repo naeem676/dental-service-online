@@ -65,3 +65,20 @@
     color: rgb(98, 107, 107);
     cursor: pointer;
 }
+.end-footer{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+.icon-div{
+    display: flex;
+    justify-content: space-around;
+}
+.brand-icon{
+    font-size: 3rem;
+    color: rgb(5, 160, 160);
+}
+.copy{
+    text-align: center;
+    margin: 30px;
+}

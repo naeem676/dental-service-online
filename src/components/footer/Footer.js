@@ -1,7 +1,12 @@
 import React from 'react';
 import one from "../../images/Ellipse 1.png";
 import dr from "../../images/dr.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 import './Footer.css';
+
+library.add(fab);
 
 const Footer = () => {
     return (
@@ -78,6 +83,47 @@ const Footer = () => {
                     <button className='footer-submit'>Submit</button>
                </div>
 
+            </div>
+            <div className='end-footer'>
+            <div>
+               <p>Emergency Dental Care</p>
+                <p>Check up</p>
+                <p>Treatment of Personal Diseases</p>
+                <p>Tooth Extraction</p>
+                <p>Check up</p>
+            </div>
+            <div>
+                <p>Services</p>
+                <p>Emergency Dental Care</p>
+                <p>Check up</p>
+                <p>Treatment of Personal Diseases</p>
+                <p>Tooth Extraction</p>
+                <p>Check up</p>
+            </div>
+            <div>
+                <p>Oral Health</p>
+                <p>Emergency Dental Care</p>
+                <p>Check up</p>
+                <p>Treatment of Personal Diseases</p>
+                <p>Tooth Extraction</p>
+                <p>Check up</p>
+            </div>
+            <div>
+                <p>Our Address</p><br/>
+                <p>Chittagong, chandgaon</p><br/>
+                <div className='icon-div'>
+                <FontAwesomeIcon className='brand-icon' icon={["fab", "facebook"]} />
+                <FontAwesomeIcon className='brand-icon' icon={["fab", "google-plus"]} />
+                <FontAwesomeIcon className='brand-icon' icon={["fab", "twitter"]} />
+                </div><br/>
+                <p>Call Now</p>
+                <button className='footer-submit'>+333888555</button>
+            </div>
+            
+
+            </div>
+            <div className='copy'>
+                <small>©Copyright 2021 All right Reserved</small>
             </div>
             
         </div>
