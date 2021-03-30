@@ -4,6 +4,11 @@ import Cavity from "../../images/tooth (1).png";
 import Teath from "../../images/tooth.png";
 import Treatment from "../../images/Mask Group 3.png";
 import doctor from "../../images/5790-removebg.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons'
+import one from "../../images/Ellipse 1.png";
+import two from "../../images/Ellipse 2.png";
+import three from "../../images/Ellipse 3.png";
 import './OurService.css'
 
 const OurSirvice = () => {
@@ -49,6 +54,48 @@ const OurSirvice = () => {
                     <h1>Make an appointment <br/> Today</h1>
                     <h4 >It is a established fact that a reader will be distractedby the readable content of a page when looking at its</h4>
                     <button className='learn-btn'>Learn More</button>
+                </div>
+            </div>
+            <div className='testimonial'>
+                <div className='testimonial-first'>
+                    <div className='first-text'>
+                        <h4 className='h2'>TESTIMONIAL</h4>
+                        <h1>What's Our Patients <br/> Says</h1>
+                    </div>
+                    <div className='first-icon'><FontAwesomeIcon className='faQuoteLeft'  icon={faQuoteLeft}/> </div>
+                </div>
+                <div className='testimonial-second'>
+                    <div className='testimonial-deeb'>
+                    <div> <p>Lorem ipsum dolor sit amet consectetur <br/> adipisicing elit. Porro animi velit dolorum  <br/> consectetur voluptas quos! <br/> Excepturi enim velit quos deleniti </p></div>
+                        <div className='testimonial-text'>
+                        <div><img src={one} alt="" srcset=""/></div>
+                            <div >
+                                <p className='h2'>Winston harry</p>
+                                <small>California</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='testimonial-deeb'>
+                    <div> <p>Lorem ipsum dolor sit amet consectetur <br/> adipisicing elit. Porro animi velit dolorum  <br/> consectetur voluptas quos! <br/> Excepturi enim velit quos deleniti </p></div>
+                        <div className='testimonial-text'>
+                            <div><img src={two} alt="" srcset=""/></div>
+                            <div >
+                                <p className='h2'>Winston harry</p>
+                                <small>California</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='testimonial-deeb'>
+                    <div> <p>Lorem ipsum dolor sit amet consectetur <br/> adipisicing elit. Porro animi velit dolorum  <br/> consectetur voluptas quos! <br/> Excepturi enim velit quos deleniti </p></div>
+                          <div className='testimonial-text'>
+                          <div><img src={three} alt="" srcset=""/></div>
+                            <div >
+                                <p className='h2'>Winston harry</p>
+                                <small>California</small>
+                            </div>
+                          </div>
+
+                    </div>
                 </div>
             </div>
         </div>

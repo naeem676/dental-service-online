@@ -56,3 +56,29 @@
 .doctor-img-div{
     transform: translate(00%, -39%);
 }
+.testimonial-first{
+    display: flex;
+    justify-content: space-between;
+    margin: 39px;
+}
+.faQuoteLeft{
+    font-size: 6em;
+    color: rgb(56, 199, 199) ;
+   
+}
+.testimonial-second{
+    display: flex;
+    justify-content: space-between;
+    
+    margin: 20px;
+}
+.testimonial-text{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.testimonial-deeb{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    padding: 20px;
+    margin: 10px;
+}

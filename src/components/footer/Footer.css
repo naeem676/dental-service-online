@@ -1,0 +1,67 @@
+.blog-main{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px;
+}
+.blog-one{
+    background-image: linear-gradient(to right, rgb(20, 92, 92), rgb(8, 184, 184), cyan);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20%;
+    padding: 20px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
+.blog-two-img{
+    display: flex;
+    justify-content: space-around;
+}
+.blog-three{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    padding: 20px;
+}
+.blog-two{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    padding: 20px;
+}
+.doctor-div{
+    display: flex;
+
+}
+.dr-img{
+    width: 50%;
+}
+.caudi{
+    justify-content: center;
+    text-align: center;
+}
+.footer-input{
+    background-image:  url("../../images/Mask\ Group\ 2.png"), linear-gradient( to right, black, black 50%, black);
+}
+.input-area{
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 40px;
+}
+.input-text{
+    width: 60%;
+    margin: 10px;
+    padding: 10px;
+}
+.input-post{
+    width: 60%;
+    padding: 60px 10px;
+    margin: 10px;
+    
+}
+.footer-submit{
+    width: 20% 40%;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-image:linear-gradient(to right, rgb(20, 92, 92), rgb(8, 184, 184), cyan);
+    border: gray;
+}
+.footer-submit:hover{
+    color: rgb(98, 107, 107);
+    cursor: pointer;
+}
