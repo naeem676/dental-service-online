@@ -1,4 +1,4 @@
-
+/* font family link */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
 
 
@@ -14,10 +14,13 @@
 .pc{
     color: white;
 }
+/* .chair-img is the picture of hospital chair */
 .chair-img{
     width: 70%;
     
 }
+
+/* .nav is a class of navbar */
 .nav{
     display: flex;
     justify-content: right;
@@ -26,9 +29,11 @@
     
 
 }
+/* .nav-p is some content of navbar */
 .nav-p{
     margin-left: 80px;
 }
+/* now start header main div style */
 .header-main-div{
     display: flex;
     justify-content: space-evenly;
@@ -44,6 +49,7 @@
     color: rgb(98, 107, 107);
     cursor: pointer;
 }
+/* now start header footer style */
 .header-footer{
     display:flex;
     justify-content: space-around;
