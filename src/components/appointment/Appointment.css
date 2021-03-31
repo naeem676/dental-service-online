@@ -1,0 +1,30 @@
+/* font family link */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+
+.appointment-components{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.appointment-header{
+    
+    
+    background-image: url("../../images/Mask\ Group\ 2.png");
+    
+    
+    
+}
+.emergency{
+    margin-top: 30px;
+}
+.main-one{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+.shedule{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    padding: 20px;
+}

@@ -10,7 +10,7 @@ library.add(fab);
 
 const Footer = () => {
     return (
-        <div>
+        <div className='footer-components'>
             <div className='service-header'>
                 <h2 className='h2'>Our Blog</h2>
                 <h1>From Our Blog News</h1>
@@ -85,7 +85,7 @@ const Footer = () => {
 
             </div>
             <div className='end-footer'>
-            <div>
+            <div className='emergency'>
                <p>Emergency Dental Care</p>
                 <p>Check up</p>
                 <p>Treatment of Personal Diseases</p>
@@ -93,7 +93,7 @@ const Footer = () => {
                 <p>Check up</p>
             </div>
             <div>
-                <p>Services</p>
+                <p className='h2'><strong>Services</strong></p>
                 <p>Emergency Dental Care</p>
                 <p>Check up</p>
                 <p>Treatment of Personal Diseases</p>
@@ -101,7 +101,7 @@ const Footer = () => {
                 <p>Check up</p>
             </div>
             <div>
-                <p>Oral Health</p>
+                <p className='h2'><strong>Oral Health</strong></p>
                 <p>Emergency Dental Care</p>
                 <p>Check up</p>
                 <p>Treatment of Personal Diseases</p>
@@ -109,7 +109,7 @@ const Footer = () => {
                 <p>Check up</p>
             </div>
             <div>
-                <p>Our Address</p><br/>
+                <p className='h2'><strong>Our Address</strong></p><br/>
                 <p>Chittagong, chandgaon</p><br/>
                 <div className='icon-div'>
                 <FontAwesomeIcon className='brand-icon' icon={["fab", "facebook"]} />

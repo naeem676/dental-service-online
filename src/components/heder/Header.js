@@ -3,6 +3,7 @@ import chair from "../../images/Mask Group 1.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock, faMapMarkerAlt, faPhoneVolume } from '@fortawesome/free-solid-svg-icons'
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -23,7 +24,7 @@ const Header = () => {
             <div className='appointment-div'>
                 <h1>Your New Smile <br/> Starts Here</h1>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa,<br/> omnis doloribus illo perspiciatis reiciendis animi cum. </p>
-                <button className='appointment-btn'>GET APPOINTMENT</button>
+                <Link to='/appointment'><button className='appointment-btn'>GET APPOINTMENT</button></Link>
             </div>
             <div className='img-div'><img className='chair-img' src={chair} alt="" srcset=""/></div>
         </div>
