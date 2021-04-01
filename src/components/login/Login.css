@@ -1,0 +1,25 @@
+.login{
+    display: flex;
+    justify-content: space-between;
+}
+.group-img{
+    width: 70%;
+}
+.form{
+    transform: translate(100%, 110%);
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    padding: 40px;
+}
+.login-btn{
+    background-color:rgb(212, 154, 7);
+    color: white;
+    border: gray;
+    padding: 10px 70px;
+    margin-top: 10px;
+    
+    
+}
+.login-btn:hover{
+    background-color: rgb(88, 64, 2);
+    cursor: pointer;
+}

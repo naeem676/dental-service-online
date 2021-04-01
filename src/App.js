@@ -6,6 +6,7 @@ import {
 import Appointment from "./components/appointment/Appointment";
 import Footer from "./components/footer/Footer";
 import Header from './components/heder/Header';
+import Login from "./components/login/Login";
 import NoMatch from "./components/nomatch/NoMatch";
 import OurSirvice from "./components/service/OurSirvice";
 
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path='/appointment'>
           <Appointment></Appointment>
+        </Route>
+        <Route path='/login'>
+          <Login></Login>
         </Route>
         <Route path='*'>
                   <NoMatch></NoMatch>      

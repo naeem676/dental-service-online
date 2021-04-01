@@ -6,7 +6,7 @@ import chair from "../../images/Mask Group 1.png";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './Appointment.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -23,12 +23,12 @@ library.add(fab);
 const Appointment = () => {
     const [open, setOpen] = useState(false);
     const [value, onChange] = useState(new Date());
-    const [appointment, setAppointment] = useState({name:'', time:'', book:''});
+    const [appointment, setAppointment] = useState({name:'', time:'', currentDateTime:''});
     const [user, setUser] = useState({time: appointment.time, name:'', number:'', email:'', date:''})
     const month = value.toLocaleDateString('default', { month: 'long' });
     const date = value.getDate();
     const year = value.getFullYear();
-    // const makeDate = date + '/' + value.getMonth() + '/' + year;
+    const makeDate = date + '/' + value.getMonth() + '/' + year;
     const makeTime = value.getHours() + ':' + value.getMinutes() + ':' + value.getSeconds()
     
     
@@ -46,12 +46,25 @@ const Appointment = () => {
           const newUser = {...user};
           newUser[e.target.name] = e.target.value;
           setUser(newUser);
+
         
       }
+      const history = useHistory();
       const handleSubmit = e => {
           const newUser = {...user};
           setUser(newUser);
-          console.log(newUser)
+          const newPetition = {...appointment, petition:newUser}
+          fetch('http://localhost:5000/addPetition', {
+              method:"POST",
+              headers:{'Content-Type':'application/json'},
+              body: JSON.stringify(newPetition)
+          })
+          .then(res => res.json())
+          .then(data => {
+              if(data){
+                  history.push('/login')
+              }
+          })
          
           
         e.preventDefault()
@@ -63,7 +76,7 @@ const Appointment = () => {
         const one = {
             name:'Teeth Cleaning',
             time:'5:00 pm - 6.30 pm',
-            book: makeTime
+            currentDateTime: makeDate + ' ' + makeTime
         }
         setAppointment(one);
         handleClickOpen();
@@ -74,7 +87,7 @@ const Appointment = () => {
         const one = {
             name:'Cosmetic Dentistry',
             time:'10:00 pm - 11.30 am',
-            book: makeTime
+            currentDateTime: makeDate + ' ' + makeTime
         }
         setAppointment(one);
         handleClickOpen();
@@ -86,7 +99,7 @@ const Appointment = () => {
         const one = {
             name:'Teeth Orthodontics',
             time:'8:00 pm - 9.30 am',
-            book: makeTime
+            currentDateTime: makeDate + ' ' + makeTime
         }
         setAppointment(one);
         handleClickOpen();
@@ -97,7 +110,7 @@ const Appointment = () => {
         const one = {
             name:'Cavity Protection',
             time:'7:00 pm - 8.30 pm',
-            book: makeTime
+            currentDateTime: makeDate + ' ' + makeTime
         }
         setAppointment(one);
         handleClickOpen();
@@ -108,7 +121,7 @@ const Appointment = () => {
         const one = {
             name:'Cosmetic Dentistry',
             time:'8:00 pm - 9.30 pm',
-            book: makeTime
+            currentDateTime: makeDate + ' ' + makeTime
         }
         setAppointment(one);
         handleClickOpen();
@@ -119,7 +132,7 @@ const Appointment = () => {
         const one = {
             name:'Teeth Cleaning',
             time:'9:00 pm - 10.30 pm',
-            book: makeTime
+            currentDateTime: makeDate + ' ' + makeTime
         }
         setAppointment(one);
         handleClickOpen();
