@@ -1,0 +1,10 @@
+.al-div{
+  text-align-last: right;
+  margin-right: 30px;
+  margin-top: 20px;
+}
+.total-length{
+    display: flex;
+    margin-left: 50px;
+    margin-bottom: 30px;
+}

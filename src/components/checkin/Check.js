@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt, faCog, faChessBoard, faCalendar, faUserAlt, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
 import './Check.css';
 import AppointmentDiv from '../appointment-div/AppointmentDiv';
+import DashboardDiv from '../dashboarddiv/DashboardDiv';
 
 
 const Check = () => {
+    const [appointmentDiv, setAppointmentDiv] = useState(false);
+    const [dashboardDiv, setDashboard] = useState(false);
+
     
     return (
         <div className='appointment-components'>
@@ -20,9 +24,13 @@ const Check = () => {
                     <p  className="logout"> <FontAwesomeIcon  icon={faSignOutAlt} />  Log out</p>
                 </div>
                 <div className="list">
-                <AppointmentDiv></AppointmentDiv>
+                    {appointmentDiv && <div>
+                    <AppointmentDiv></AppointmentDiv>
+                    </div>}
                   
-                    <div id="Dashboard">Dashboard</div>
+                    {dashboardDiv && <div id="Dashboard">
+                        <DashboardDiv></DashboardDiv>
+                    </div>}
                     <div id="Patients">Patients</div>
                     <div id="Prescriptions">Prescriptions</div>
                 </div>
