@@ -1,26 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt, faCog, faChessBoard, faCalendar, faUserAlt, faFileAlt } from '@fortawesome/free-solid-svg-icons';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+
 import './Check.css';
+import AppointmentDiv from '../appointment-div/AppointmentDiv';
 
 
 const Check = () => {
-    const [value, onChange] = useState(new Date());
-    const [petition, setPetition] = useState([]);
-    const date = value.getDate();
-    const year = value.getFullYear();
-    const month = value.toLocaleDateString('default', { month: 'short' });
-    const makeDate =   date + ' ' + month + ','   +  year;
-
-    useEffect(()=>{
-        fetch('http://localhost:5000/petitions')
-        .then(res => res.json())
-        .then(data => {
-            setPetition(data)
-        })
-    },[])
     
     return (
         <div className='appointment-components'>
@@ -34,44 +20,9 @@ const Check = () => {
                     <p  className="logout"> <FontAwesomeIcon  icon={faSignOutAlt} />  Log out</p>
                 </div>
                 <div className="list">
-                   <div><h1>Appointment</h1></div>
-                   <div className="appointment">
-                    
-                    <div className="react-calendar">
-                    <Calendar
-                        onChange={onChange}
-                        value={value}
-                    />
-
-                    </div>
-                    <div className="react-appointment">
-                    <div className="appointment-date">
-                        <h4 className='h2'>Appointment</h4>
-                        <p>{makeDate}</p>
-                    </div>
-                    
-                    {
-                        petition.map(human => 
-                      
-                       <div className="all-petition">
-                        <p>
-                            Name : {human.petition.name}
-                        </p> 
-                        <p className="all-div">
-                            Schedule : {human.time}
-                            
-                        </p>
-                        <p className="all-div">
-                           Action : <button>Not visited</button>
-                            
-                        </p>
-                        </div>
-                       )
-                    }
-
-                    </div>
-                </div>
-                    <div id="Appointment">Appointment</div>
+                <AppointmentDiv></AppointmentDiv>
+                  
+                    <div id="Dashboard">Dashboard</div>
                     <div id="Patients">Patients</div>
                     <div id="Prescriptions">Prescriptions</div>
                 </div>
