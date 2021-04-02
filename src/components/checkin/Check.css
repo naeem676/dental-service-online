@@ -22,3 +22,36 @@
     margin-top: 40px;
     margin-left: 200px;
 }
+.appointment{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.react-appointment{
+    margin-left: 50px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    padding: 10px;
+}
+.all-petition{
+    display: flex;
+    justify-content: space-around;
+}
+.all-petition{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.all-div{
+    margin-left: 40px;
+}
+.react-calendar{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    padding: 20px;
+}
+.appointment-date{
+    display: flex;
+    justify-content: space-between;
+}
+    
+
+
