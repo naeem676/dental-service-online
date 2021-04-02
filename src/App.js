@@ -4,6 +4,7 @@ import {
   Route
 } from "react-router-dom";
 import Appointment from "./components/appointment/Appointment";
+import Check from "./components/checkin/Check";
 import Footer from "./components/footer/Footer";
 import Header from './components/heder/Header';
 import Login from "./components/login/Login";
@@ -30,6 +31,9 @@ function App() {
         </Route>
         <Route path='/login'>
           <Login></Login>
+        </Route>
+        <Route path='/check'>
+          <Check></Check>
         </Route>
         <Route path='*'>
                   <NoMatch></NoMatch>      
