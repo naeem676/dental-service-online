@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -13,6 +13,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { DialogActions } from '@material-ui/core';
+import { UserContext } from '../../App';
 
 
 
@@ -21,6 +22,7 @@ library.add(fab);
 
 
 const Appointment = () => {
+    const [loggInUser, setLoggInUser] = useContext(UserContext);
     const [open, setOpen] = useState(false);
     const [value, onChange] = useState(new Date());
     const [appointment, setAppointment] = useState({name:'', time:'', currentDateTime:''});
@@ -53,8 +55,8 @@ const Appointment = () => {
       const handleSubmit = e => {
           const newUser = {...user};
           setUser(newUser);
-          const newPetition = {...appointment, petition:newUser}
-          fetch('http://localhost:5000/addPetition', {
+          const newPetition = {...loggInUser, Appointment : appointment, Petition:newUser}
+          fetch('https://protected-headland-06474.herokuapp.com/addPetition', {
               method:"POST",
               headers:{'Content-Type':'application/json'},
               body: JSON.stringify(newPetition)
@@ -62,7 +64,7 @@ const Appointment = () => {
           .then(res => res.json())
           .then(data => {
               if(data){
-                  history.push('/login')
+                  history.push('/check')
               }
           })
          
@@ -262,7 +264,7 @@ const Appointment = () => {
                 <TextField autoFocus margin="dense" onBlur={handleOnBlur} name="time" id="time" value={appointment.time}  fullWidth required />
                 <TextField autoFocus margin="dense" onChange={handleOnBlur}  name="name"   label="Your Name" type="text" fullWidth required />
                 <TextField autoFocus margin="dense" onChange={handleOnBlur}  name="number" label="Your Number" type="number" fullWidth required/>
-                <TextField autoFocus margin="dense" onChange={handleOnBlur}  name="email" label="Email Address" type="email" fullWidth required/>
+                <TextField autoFocus margin="dense" onBlur={handleOnBlur}  name="email" label="Email Address" type="email" value={loggInUser.email} fullWidth required/>
                 <TextField autoFocus margin="dense" onChange={handleOnBlur}  name="date" id="date"  type="date" fullWidth required/>
                 
                 <DialogActions>

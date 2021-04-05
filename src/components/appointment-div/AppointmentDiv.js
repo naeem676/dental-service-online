@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import { UserContext } from '../../App';
 
 const AppointmentDiv = () => {
+    const [loggInUser, setLoggInUser] = useContext(UserContext);
+   
     const [value, onChange] = useState(new Date());
     const [petition, setPetition] = useState([]);
     const date = value.getDate();
@@ -11,7 +14,13 @@ const AppointmentDiv = () => {
     const makeDate =   date + ' ' + month + ','   +  year;
 
     useEffect(()=>{
-        fetch('http://localhost:5000/petitions')
+        fetch('https://protected-headland-06474.herokuapp.com/petitions?email=' + loggInUser.email, {
+            method:"GET",
+            headers:{
+                'Content-Type' : 'application/json',
+                authorization: `Bearer ${sessionStorage.getItem('token')}`
+            }
+        })
         .then(res => res.json())
         .then(data => {
             setPetition(data)
@@ -42,10 +51,10 @@ const AppointmentDiv = () => {
                       
                        <div className="all-petition">
                         <p>
-                            Name : {human.petition.name}
+                            Name : {human.Petition.name}
                         </p> 
                         <p className="all-div">
-                            Schedule : {human.time}
+                            Schedule : {human.Appointment.time}
                             
                         </p>
                         <p className="all-div">
